@@ -181,19 +181,19 @@ if uploaded_file is not None:
             # Display the plot in Streamlit
             st.pyplot(fig)
 
-            import shap
-            explainer = shap.TreeExplainer(dtree)
-            shap_values = explainer.shap_values(X_test, check_additivity=False)
-            fig, ax = plt.subplots()
-            shap.summary_plot(shap_values, X_test, show=False)
-            st.pyplot(fig)
+            #import shap
+            #explainer = shap.TreeExplainer(dtree)
+            #shap_values = explainer.shap_values(X_test, check_additivity=False)
+            #fig, ax = plt.subplots()
+            #shap.summary_plot(shap_values, X_test, show=False)
+            #st.pyplot(fig)
 
             # compute SHAP values
-            explainer = shap.TreeExplainer(dtree)
-            shap_values = explainer.shap_values(X_test, check_additivity=False)
-            fig, ax = plt.subplots()
-            shap.summary_plot(shap_values[1], X_test.values, feature_names = X_test.columns)
-            st.pyplot(fig)
+            #explainer = shap.TreeExplainer(dtree)
+            #shap_values = explainer.shap_values(X_test, check_additivity=False)
+            #fig, ax = plt.subplots()
+            #shap.summary_plot(shap_values[1], X_test.values, feature_names = X_test.columns)
+            #st.pyplot(fig)
 
             from sklearn.metrics import confusion_matrix            
             cm = confusion_matrix(y_test, y_pred)
@@ -241,19 +241,19 @@ if uploaded_file is not None:
             # Display the plot in Streamlit
             st.pyplot(fig)
 
-            import shap
-            explainer = shap.TreeExplainer(rfc)
-            shap_values = explainer.shap_values(X_test, check_additivity=False)
-            fig, ax = plt.subplots()
-            shap.summary_plot(shap_values, X_test, show=False)
-            st.pyplot(fig)
+            #import shap
+            #explainer = shap.TreeExplainer(rfc)
+            #shap_values = explainer.shap_values(X_test, check_additivity=False)
+            #fig, ax = plt.subplots()
+            #shap.summary_plot(shap_values, X_test, show=False)
+            #st.pyplot(fig)
 
             # compute SHAP values
-            explainer = shap.TreeExplainer(rfc)
-            shap_values = explainer.shap_values(X_test, check_additivity=False)
-            fig, ax = plt.subplots()
-            shap.summary_plot(shap_values[1], X_test.values, feature_names = X_test.columns)
-            st.pyplot(fig)
+            #explainer = shap.TreeExplainer(rfc)
+            #shap_values = explainer.shap_values(X_test, check_additivity=False)
+            #fig, ax = plt.subplots()
+            #shap.summary_plot(shap_values[1], X_test.values, feature_names = X_test.columns)
+            #st.pyplot(fig)
 
             from sklearn.metrics import confusion_matrix            
             cm = confusion_matrix(y_test, y_pred)
