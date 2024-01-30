@@ -187,7 +187,7 @@ if uploaded_file is not None:
             sns.heatmap(data=cm,linewidths=.5, annot=True,  cmap = 'Blues')
             plt.ylabel('Actual label')
             plt.xlabel('Predicted label')
-            all_sample_title = 'Accuracy Score for Decision Tree: {0}'.format(dtree.score(X_test, y_test)*100)
+            all_sample_title = 'Accuracy Score for Decision Tree: {0}'.format(dtree.score(X_test, y_test)*100, "%")
             plt.title(all_sample_title, size = 15)
             st.pyplot(fig)
         
@@ -233,7 +233,7 @@ if uploaded_file is not None:
             sns.heatmap(data=cm,linewidths=.5, annot=True,  cmap = 'Blues')
             plt.ylabel('Actual label')
             plt.xlabel('Predicted label')
-            all_sample_title = 'Accuracy Score for Random Forest: {0}'.format(rfc.score(X_test, y_test)*100)
+            all_sample_title = 'Accuracy Score for Random Forest: {0}'.format(rfc.score(X_test, y_test)*100, "%")
             plt.title(all_sample_title, size = 15)
             st.pyplot(fig)
         
