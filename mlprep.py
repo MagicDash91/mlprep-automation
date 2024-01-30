@@ -181,20 +181,6 @@ if uploaded_file is not None:
             # Display the plot in Streamlit
             st.pyplot(fig)
 
-            #import shap
-            #explainer = shap.TreeExplainer(dtree)
-            #shap_values = explainer.shap_values(X_test, check_additivity=False)
-            #fig, ax = plt.subplots()
-            #shap.summary_plot(shap_values, X_test, show=False)
-            #st.pyplot(fig)
-
-            # compute SHAP values
-            #explainer = shap.TreeExplainer(dtree)
-            #shap_values = explainer.shap_values(X_test, check_additivity=False)
-            #fig, ax = plt.subplots()
-            #shap.summary_plot(shap_values[1], X_test.values, feature_names = X_test.columns)
-            #st.pyplot(fig)
-
             from sklearn.metrics import confusion_matrix            
             cm = confusion_matrix(y_test, y_pred)
             fig, ax = plt.subplots(figsize=(5, 5))
@@ -240,20 +226,6 @@ if uploaded_file is not None:
 
             # Display the plot in Streamlit
             st.pyplot(fig)
-
-            #import shap
-            #explainer = shap.TreeExplainer(rfc)
-            #shap_values = explainer.shap_values(X_test, check_additivity=False)
-            #fig, ax = plt.subplots()
-            #shap.summary_plot(shap_values, X_test, show=False)
-            #st.pyplot(fig)
-
-            # compute SHAP values
-            #explainer = shap.TreeExplainer(rfc)
-            #shap_values = explainer.shap_values(X_test, check_additivity=False)
-            #fig, ax = plt.subplots()
-            #shap.summary_plot(shap_values[1], X_test.values, feature_names = X_test.columns)
-            #st.pyplot(fig)
 
             from sklearn.metrics import confusion_matrix            
             cm = confusion_matrix(y_test, y_pred)
@@ -308,19 +280,6 @@ if uploaded_file is not None:
 
             # Display the plot in Streamlit
             st.pyplot(fig)
-
-            import shap
-            explainer = shap.TreeExplainer(dtree)
-            shap_values = explainer.shap_values(X_test)
-            fig, ax = plt.subplots()
-            shap.summary_plot(shap_values, X_test)
-            st.pyplot(fig)
-
-            explainer = shap.Explainer(dtree, X_test)
-            shap_values = explainer(X_test)
-            fig, ax = plt.subplots()
-            shap.plots.waterfall(shap_values[0])
-            st.pyplot(fig)
         
         if select_method2a == "Random Forest Regressor":
             rs1 = st.selectbox('Random State', (0, 42))
@@ -363,17 +322,3 @@ if uploaded_file is not None:
 
             # Display the plot in Streamlit
             st.pyplot(fig)
-
-            import shap
-            explainer = shap.TreeExplainer(rf)
-            shap_values = explainer.shap_values(X_test)
-            fig, ax = plt.subplots()
-            shap.summary_plot(shap_values, X_test)
-            st.pyplot(fig)
-
-            explainer = shap.Explainer(rf, X_test)
-            shap_values = explainer(X_test)
-            fig, ax = plt.subplots()
-            shap.plots.waterfall(shap_values[0])
-            st.pyplot(fig)
-
